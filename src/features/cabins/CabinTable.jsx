@@ -34,11 +34,10 @@ function CabinTable() {
     data: cabins,
     error,
   } = useQuery({
-    queryKey: ["cabin"],
-    queryFn: getCabins,
+    queryKey: ["cabins"],
+    queryFn: getCabins, // queryFn has to return promise
   });
 
-  console.log(cabins);
   if (isLoading) return <Spinner />;
   return (
     <Table role="table">
